@@ -1,0 +1,7 @@
+.post {
+    margin-top: 50px;
+}
+
+.post__card + .post__card {
+    margin-top: 40px;
+}

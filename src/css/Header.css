@@ -1,0 +1,13 @@
+.header {
+    height: 70px;
+    background-color: #000;
+}
+
+.header__inner {
+    height: inherit;
+    padding: 0 24px;
+}
+
+.header_nav {
+    height: inherit;
+}
