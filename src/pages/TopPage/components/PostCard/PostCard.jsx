@@ -22,28 +22,26 @@ const PostCard = ({ post }) => {
 
   return (
     <>
-      <li className={classes.post__card} post_card>
-        <a href='#'>
-          <div className={classes.post_card__header}>
-            <div className={classes.post_card__date}>
-              <time datetime={formatDate(post.createdAt, '-')}>
-                {formatDate(post.createdAt, '/')}
-              </time>
-            </div>
-            <div className={classes.post_card__categories}>
-              {post.categories.map((category) => (
-                <p>{category}</p>
-              ))}
-            </div>
+      <a className={classes.post_card} href='#'>
+        <div className={classes.post_card__header}>
+          <div className={classes.post_card__date}>
+            <time dateTime={formatDate(post.createdAt, '-')}>
+              {formatDate(post.createdAt, '/')}
+            </time>
           </div>
-          <div className={classes.post_card__title}>
-            <p>{post.title}</p>
+          <div className={classes.post_card__categories}>
+            {post.categories.map((category) => (
+              <p>{category}</p>
+            ))}
           </div>
-          <div className={classes.post_card__content}>
-            <p dangerouslySetInnerHTML={{ __html: getPreviewContent(post.content) }} />
-          </div>
-        </a>
-      </li>
+        </div>
+        <div className={classes.post_card__title}>
+          <p>{post.title}</p>
+        </div>
+        <div className={classes.post_card__content}>
+          <p dangerouslySetInnerHTML={{ __html: getPreviewContent(post.content) }} />
+        </div>
+      </a>
     </>
   );
 }

@@ -1,8 +1,5 @@
 .post_card {
     border: 1px solid #ccc;
-}
-
-.post_card a {
     padding: 20px 30px 20px 20px;
     display: block;
 }
