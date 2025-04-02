@@ -1,5 +1,4 @@
-import '../css/common.css'
-import '../css/PostCard.css'
+import classes from "./PostCard.module.css";
 
 const PostCard = ({ post }) => {
   // 日付を取得する関数
@@ -23,24 +22,24 @@ const PostCard = ({ post }) => {
 
   return (
     <>
-      <li className='post__card post_card'>
+      <li className={classes.post__card} post_card>
         <a href='#'>
-          <div className='post_card__header'>
-            <div className='post_card__date'>
+          <div className={classes.post_card__header}>
+            <div className={classes.post_card__date}>
               <time datetime={formatDate(post.createdAt, '-')}>
                 {formatDate(post.createdAt, '/')}
               </time>
             </div>
-            <div className='post_card__categories'>
+            <div className={classes.post_card__categories}>
               {post.categories.map((category) => (
                 <p>{category}</p>
               ))}
             </div>
           </div>
-          <div className='post_card__title'>
+          <div className={classes.post_card__title}>
             <p>{post.title}</p>
           </div>
-          <div className='post_card__content'>
+          <div className={classes.post_card__content}>
             <p dangerouslySetInnerHTML={{ __html: getPreviewContent(post.content) }} />
           </div>
         </a>

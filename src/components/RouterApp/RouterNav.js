@@ -1,12 +1,11 @@
 import { NavLink, Outlet } from "react-router-dom";
 
-import '../css/common.css'
-import '../css/Nav.css'
+import classes from "./Nav.module.css";
 
-const RouterApp = () => {
+const RouterNav = () => {
   return (
     <>
-      <ul className="header_nav nav">
+      <ul className={classes.nav}>
         <li>
           <NavLink to="/">Blog</NavLink>
         </li>
@@ -19,4 +18,4 @@ const RouterApp = () => {
   );
 }
 
-export default RouterApp;
+export default RouterNav;

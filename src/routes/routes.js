@@ -1,7 +1,7 @@
 import { Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 
 import { posts } from '../data/posts';
-import TopPage from '../pages/TopPage';
+import TopPage from '../pages/TopPage/TopPage';
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
