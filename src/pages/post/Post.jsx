@@ -1,17 +1,9 @@
 import { useParams } from "react-router-dom";
+import formatDate from "../../utils/formatDate";
 
 import classes from "./Post.module.css";
 
 const Post = ({ posts }) => {
-  // 日付を取得する関数
-  const formatDate = (isoString, separator) => {
-    const date = new Date(isoString);
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    return `${year}${separator}${month}${separator}${day}`;
-  };
-
   const { id } = useParams();
   const post = posts.find(post => post.id === parseInt(id));
 
