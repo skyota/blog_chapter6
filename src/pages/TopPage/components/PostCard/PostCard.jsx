@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import classes from "./PostCard.module.css";
 
 const PostCard = ({ post }) => {
@@ -22,26 +23,28 @@ const PostCard = ({ post }) => {
 
   return (
     <>
-      <a className={classes.post_card} href='#'>
-        <div className={classes.post_card__header}>
-          <div className={classes.post_card__date}>
-            <time dateTime={formatDate(post.createdAt, '-')}>
-              {formatDate(post.createdAt, '/')}
-            </time>
+      <Link to={`/post/${post.id}`}>
+        <div className={classes.post_card} href='#'>
+          <div className={classes.post_card__header}>
+            <div className={classes.post_card__date}>
+              <time dateTime={formatDate(post.createdAt, '-')}>
+                {formatDate(post.createdAt, '/')}
+              </time>
+            </div>
+            <div className={classes.post_card__categories}>
+              {post.categories.map((category) => (
+                <p>{category}</p>
+              ))}
+            </div>
           </div>
-          <div className={classes.post_card__categories}>
-            {post.categories.map((category) => (
-              <p>{category}</p>
-            ))}
+          <div className={classes.post_card__title}>
+            <p>{post.title}</p>
+          </div>
+          <div className={classes.post_card__content}>
+            <p dangerouslySetInnerHTML={{ __html: getPreviewContent(post.content) }} />
           </div>
         </div>
-        <div className={classes.post_card__title}>
-          <p>{post.title}</p>
-        </div>
-        <div className={classes.post_card__content}>
-          <p dangerouslySetInnerHTML={{ __html: getPreviewContent(post.content) }} />
-        </div>
-      </a>
+      </Link>
     </>
   );
 }

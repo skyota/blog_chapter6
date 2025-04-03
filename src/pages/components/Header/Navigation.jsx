@@ -1,8 +1,8 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-import classes from "./Nav.module.css";
+import classes from "./Header.module.css";
 
-const RouterNav = () => {
+const Navigation = () => {
   return (
     <>
       <ul className={classes.nav}>
@@ -13,9 +13,8 @@ const RouterNav = () => {
           <NavLink to="/">お問い合わせ</NavLink>
         </li>
       </ul>
-      <Outlet />
     </>
   );
 }
 
-export default RouterNav;
+export default Navigation;
