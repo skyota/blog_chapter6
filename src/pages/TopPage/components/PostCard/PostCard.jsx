@@ -23,7 +23,7 @@ const PostCard = ({ post }) => {
 
   return (
     <>
-      <Link to={`/post/${post.id}`}>
+      <Link to={`/posts/${post.id}`}>
         <div className={classes.post_card} href='#'>
           <div className={classes.post_card__header}>
             <div className={classes.post_card__date}>

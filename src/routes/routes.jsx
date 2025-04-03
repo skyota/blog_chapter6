@@ -10,7 +10,7 @@ const routes = createBrowserRouter(
     <>
       <Route path="/" element={<Layout />}>
         <Route index element={<TopPage posts={posts} />} />
-        <Route path="/post/:id" element={<Post posts={posts} />} />
+        <Route path="/posts/:id" element={<Post posts={posts} />} />
       </Route>
     </>
   )
