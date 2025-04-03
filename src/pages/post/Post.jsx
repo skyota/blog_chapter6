@@ -37,9 +37,7 @@ const Post = ({ posts }) => {
           <div className={classes.post__title}>
             <p>{post.title}</p>
           </div>
-          <div className={classes.post__content}>
-            <p dangerouslySetInnerHTML={{ __html: post.content }} />
-          </div>
+          <div className={classes.post__content} dangerouslySetInnerHTML={{ __html: post.content }}></div>
         </div>
       </div>
     </div>
