@@ -3,7 +3,7 @@ import { Route, createBrowserRouter, createRoutesFromElements } from "react-rout
 import { posts } from '../data/posts';
 import Layout from "../layouts/Layout";
 import TopPage from '../pages/TopPage/TopPage';
-import Post from '../pages/post/Post';
+import Post from '../pages/posts/Post';
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
