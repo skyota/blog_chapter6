@@ -6,7 +6,7 @@ import classes from "./Post.module.css";
 
 const Post = () => {
   const { id } = useParams();
-  const [post, setPost] = useState([]);
+  const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
