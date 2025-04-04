@@ -10,7 +10,7 @@ const Post = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPost = async (id) => {
+    const fetchPost = async () => {
       try {
         const res = await fetch(`https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts/${id}`)
         const data = await res.json()
@@ -22,7 +22,7 @@ const Post = () => {
       }
     };
 
-    fetchPost(id);
+    fetchPost();
   }, []);
 
   if (loading) return <p>読み込み中...</p>;
