@@ -1,11 +1,31 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import formatDate from "../../utils/formatDate";
 
 import classes from "./Post.module.css";
 
-const Post = ({ posts }) => {
+const Post = () => {
   const { id } = useParams();
-  const post = posts.find(post => post.id === parseInt(id));
+  const [post, setPost] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPost = async (id) => {
+      try {
+        const res = await fetch(`https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts/${id}`)
+        const data = await res.json()
+        setPost(data.post)
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPost(id);
+  }, []);
+
+  if (loading) return <p>読み込み中...</p>;
 
   return (
     <div className={classes.post}>
