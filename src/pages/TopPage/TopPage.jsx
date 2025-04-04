@@ -5,16 +5,25 @@ import classes from './TopPage.module.css';
 
 const TopPage = () => {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch("https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts");
-      const data = await res.json();
-      setPosts(data.posts);
-    }
+      try {
+        const res = await fetch("https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts");
+        const data = await res.json();
+        setPosts(data.posts);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    fetchPosts()
+    fetchPosts();
   }, []);
+
+  if (loading) return <p>読み込み中...</p>
 
   return (
     <>
