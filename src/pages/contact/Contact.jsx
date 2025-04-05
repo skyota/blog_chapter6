@@ -85,7 +85,7 @@ const Contact = () => {
           <div className={classes.contact__content}>
             <label htmlFor='message'>本文</label>
             <div className={classes.contact__input}>
-              <textarea id='message' name='message' onChange={handleForm} value={form.message} />
+              <textarea id='message' name='message' onChange={handleForm} value={form.message} disabled={isSubmitting} />
               {error.message && <p>{error.message}</p>}
             </div>
           </div>
