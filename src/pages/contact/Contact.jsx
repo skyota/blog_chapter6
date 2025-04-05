@@ -71,7 +71,7 @@ const Contact = () => {
           <div className={classes.contact__content}>
             <label htmlFor='name'>お名前</label>
             <div className={classes.contact__input}>
-              <input id='name' name='name' type='text' onChange={handleForm} value={form.name} />
+              <input id='name' name='name' type='text' onChange={handleForm} value={form.name} disabled={isSubmitting} />
               {error.name && <p>{error.name}</p>}
             </div>
           </div>
