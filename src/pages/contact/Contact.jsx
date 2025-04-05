@@ -78,7 +78,7 @@ const Contact = () => {
           <div className={classes.contact__content}>
             <label htmlFor='email'>メールアドレス</label>
             <div className={classes.contact__input}>
-              <input id='email' name='email' type='email' onChange={handleForm} value={form.email} />
+              <input id='email' name='email' type='email' onChange={handleForm} value={form.email} disabled={isSubmitting} />
               {error.email && <p>{error.email}</p>}
             </div>
           </div>
