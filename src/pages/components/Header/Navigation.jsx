@@ -10,7 +10,7 @@ const Navigation = () => {
           <NavLink to="/">Blog</NavLink>
         </li>
         <li>
-          <NavLink to="/">お問い合わせ</NavLink>
+          <NavLink to="/contact">お問い合わせ</NavLink>
         </li>
       </ul>
     </>
