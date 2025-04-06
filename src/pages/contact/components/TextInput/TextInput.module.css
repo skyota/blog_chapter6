@@ -1,0 +1,15 @@
+.input_field {
+    width: calc(100% - 240px);
+}
+
+.input_field input {
+    padding: 20px 15px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input_field p {
+    color: red;
+}
