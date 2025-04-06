@@ -1,0 +1,17 @@
+.textarea_field {
+    width: calc(100% - 240px);
+}
+
+.textarea_field textarea {
+    padding: 20px 15px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    min-height: 200px;
+    line-height: 1.5;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.textarea_field p {
+    color: red;
+}

@@ -11,6 +11,11 @@
     margin-top: 20px;
 }
 
+.contact__content {
+    display: flex;
+    align-items: center;
+}
+
 .contact__content + .contact__content {
     margin-top: 20px;
 }

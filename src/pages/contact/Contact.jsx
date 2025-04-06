@@ -1,5 +1,7 @@
 import { useForm } from 'react-hook-form'
-import FormField from './components/FormField/FormField';
+import Label from './components/Label/Label';
+import Textarea from './components/Textarea/Textarea';
+import TextInput from './components/TextInput/TextInput';
 import classes from './Contact.module.css';
 
 const Contact = () => {
@@ -28,46 +30,42 @@ const Contact = () => {
         </div>
         <form className={classes.contact__contents} onSubmit={handleSubmit(onSubmit)}>
           <div className={classes.contact__content}>
-            <FormField
-              label="お名前"
+            <Label name="name" label="お名前" />
+            <TextInput
               name="name"
               type="text"
-              register={register}
-              validation={{
+              register={register("name", {
                 required: "お名前は必須です",
                 maxLength: {value: 30, message: "30文字以内で入力してください"}
-              }}
+              })}
               error={errors.name?.message}
               disabled={isSubmitting}
             />
           </div>
           <div className={classes.contact__content}>
-            <FormField
-              label="メールアドレス"
+            <Label name="email" label="メールアドレス" />
+            <TextInput
               name="email"
               type="email"
-              register={register}
-              validation={{
+              register={register("email", {
                 required: "メールアドレスは必須です",
                 pattern: {
                   value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                   message: "メールアドレスの形式が正しくありません"
                 }
-              }}
+              })}
               error={errors.email?.message}
               disabled={isSubmitting}
             />
           </div>
           <div className={classes.contact__content}>
-            <FormField
-              label="本文"
+            <Label name="message" label="本文" />
+            <Textarea
               name="message"
-              type="textarea"
-              register={register}
-              validation={{
+              register={register("message", {
                 required: "本文は必須です",
                 maxLength: {value: 500, message: "500文字以内で入力してください"}
-              }}
+              })}
               error={errors.message?.message}
               disabled={isSubmitting}
             />
